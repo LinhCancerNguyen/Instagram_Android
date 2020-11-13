@@ -7,6 +7,9 @@ public class User {
     private String imageUrl;
     private String bio;
 
+    public User() {
+    }
+
     public User(String id, String username, String fullName, String imageUrl, String bio) {
         this.id = id;
         this.username = username;
