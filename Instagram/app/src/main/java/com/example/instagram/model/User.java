@@ -7,6 +7,7 @@ public class User {
     private String imageUrl;
     private String bio;
 
+
     public User() {
     }
 
