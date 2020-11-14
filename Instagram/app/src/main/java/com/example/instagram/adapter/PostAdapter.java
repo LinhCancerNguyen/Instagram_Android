@@ -1,7 +1,6 @@
 package com.example.instagram.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.instagram.CommentsActivity;
 import com.example.instagram.R;
 import com.example.instagram.model.Post;
 import com.example.instagram.model.User;
@@ -61,9 +59,8 @@ public class PostAdapter extends  RecyclerView.Adapter<PostAdapter.ViewHolder>{
         }
 
         publisherInfo(holder.image_profile, holder.username, holder.publisher, post.getPublisher());
-        isLiked(post.getPostid(), holder.like);
-        nrLikes(holder.likes, post.getPostid());
-        getComments(post.getPostid(), holder.comments);
+        //isLiked(post.getPostid(), holder.like);
+        //nrLikes(holder.likes, post.getPostid());
 
         holder.like.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,16 +72,6 @@ public class PostAdapter extends  RecyclerView.Adapter<PostAdapter.ViewHolder>{
                     FirebaseDatabase.getInstance().getReference().child("Likes").child(post.getPostid())
                             .child(firebaseUser.getUid()).removeValue();
                 }
-            }
-        });
-
-        holder.comment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(mContext, CommentsActivity.class);
-                intent.putExtra("postid", post.getPostid());
-                intent.putExtra("publisherid", post.getPublisher());
-                mContext.startActivity(intent);
             }
         });
     }
@@ -113,22 +100,6 @@ public class PostAdapter extends  RecyclerView.Adapter<PostAdapter.ViewHolder>{
             comments = itemView.findViewById(R.id.comments);
 
         }
-    }
-
-    private void getComments(String postid, final TextView comments){
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Comments").child(postid);
-
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                comments.setText("View All "+ snapshot.getChildrenCount() + " Comments");
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
     }
 
     private void isLiked(String postid, ImageView imageView){
