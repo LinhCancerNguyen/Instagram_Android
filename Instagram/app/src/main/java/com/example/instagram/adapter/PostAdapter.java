@@ -59,8 +59,8 @@ public class PostAdapter extends  RecyclerView.Adapter<PostAdapter.ViewHolder>{
         }
 
         publisherInfo(holder.image_profile, holder.username, holder.publisher, post.getPublisher());
-        //isLiked(post.getPostid(), holder.like);
-        //nrLikes(holder.likes, post.getPostid());
+//        isLiked(post.getPostid(), holder.like);
+//        nrLikes(holder.likes, post.getPostid());
 
         holder.like.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,7 +151,7 @@ public class PostAdapter extends  RecyclerView.Adapter<PostAdapter.ViewHolder>{
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User user = snapshot.getValue(User.class);
-                Glide.with(mContext).load(user.getImageUrl()).into(image_profile);
+                Glide.with(mContext).load(user.getImageurl()).into(image_profile);
                 username.setText(user.getUsername());
                 publisher.setText(user.getUsername());
             }

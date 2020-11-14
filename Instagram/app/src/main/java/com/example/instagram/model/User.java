@@ -3,18 +3,18 @@ package com.example.instagram.model;
 public class User {
     private String id;
     private String username;
-    private String fullName;
-    private String imageUrl;
+    private String fullname;
+    private String imageurl;
     private String bio;
 
     public User() {
     }
 
-    public User(String id, String username, String fullName, String imageUrl, String bio) {
+    public User(String id, String username, String fullname, String imageurl, String bio) {
         this.id = id;
         this.username = username;
-        this.fullName = fullName;
-        this.imageUrl = imageUrl;
+        this.fullname = fullname;
+        this.imageurl = imageurl;
         this.bio = bio;
     }
 
@@ -34,20 +34,20 @@ public class User {
         this.username = username;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getFullname() {
+        return fullname;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getImageurl() {
+        return imageurl;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setImageurl(String imageurl) {
+        this.imageurl = imageurl;
     }
 
     public String getBio() {
