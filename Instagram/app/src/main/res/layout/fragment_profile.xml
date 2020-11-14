@@ -25,6 +25,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
+                    android:maxLines="1"
                     android:textStyle="bold"
                     android:id="@+id/username"
                     android:textColor="@color/colorPrimaryDark"/>
@@ -205,7 +206,7 @@
                     android:layout_weight="1"
                     android:id="@+id/saved_photos"
                     android:src="@drawable/ic_save"
-                    style="?android:attr/buttonBarButtonStyle"/>\
+                    style="?android:attr/buttonBarButtonStyle"/>
 
             </LinearLayout>
 
