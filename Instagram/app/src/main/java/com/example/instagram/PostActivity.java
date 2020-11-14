@@ -108,7 +108,7 @@ public class PostActivity extends AppCompatActivity {
                         hashMap.put("description", description);
                         hashMap.put("publisher", FirebaseAuth.getInstance().getCurrentUser().getUid());
 
-                        reference.child("postId").setValue(hashMap);
+                        reference.child(postId).setValue(hashMap);
                         progressDialog.dismiss();
                         startActivity(new Intent(PostActivity.this, MainActivity.class));
                         finish();
