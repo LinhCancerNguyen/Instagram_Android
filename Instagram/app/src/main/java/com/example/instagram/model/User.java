@@ -1,4 +1,4 @@
-package com.example.instagram.model;
+package com.example.instagram.Model;
 
 public class User {
     private String id;
@@ -7,15 +7,15 @@ public class User {
     private String imageurl;
     private String bio;
 
-    public User() {
-    }
-
     public User(String id, String username, String fullname, String imageurl, String bio) {
         this.id = id;
         this.username = username;
         this.fullname = fullname;
         this.imageurl = imageurl;
         this.bio = bio;
+    }
+
+    public User() {
     }
 
     public String getId() {

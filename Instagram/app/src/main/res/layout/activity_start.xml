@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="12dp"
     android:gravity="center"
+    android:padding="8dp"
+    android:layout_height="match_parent"
     tools:context=".StartActivity">
 
     <ImageView
@@ -17,18 +17,18 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:id="@+id/btnLogin_1"
         android:layout_marginTop="15dp"
+        android:text="Log in"
+        android:id="@+id/login"
         android:textColor="@color/colorPrimary"
         android:background="@drawable/button_background"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register"
-        android:id="@+id/btnRegister_1"
         android:layout_marginTop="15dp"
+        android:text="Register"
+        android:id="@+id/register"
         android:textColor="@color/colorPrimary"
         android:background="@drawable/button_background"/>
 
