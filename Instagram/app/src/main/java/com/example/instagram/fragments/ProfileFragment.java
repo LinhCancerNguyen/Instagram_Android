@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.instagram.EditProfileActivity;
 import com.example.instagram.adapter.MyPhotosAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -121,7 +122,7 @@ public class ProfileFragment extends Fragment {
 
                 if (btn.equals("Edit Profile")){
 
-//                    startActivity(new Intent(getContext(), EditProfileActivity.class));
+                    startActivity(new Intent(getContext(), EditProfileActivity.class));
 
                 } else if (btn.equals("follow")){
 
