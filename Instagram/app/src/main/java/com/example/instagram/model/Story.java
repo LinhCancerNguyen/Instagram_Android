@@ -1,4 +1,4 @@
-package com.example.instagram.Model;
+package com.example.instagram.model;
 
 public class Story {
     private String imageurl;

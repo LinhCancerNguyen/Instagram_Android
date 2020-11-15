@@ -11,10 +11,10 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-import com.example.instagram.Fragments.HomeFragment;
-import com.example.instagram.Fragments.NotificationFragment;
-import com.example.instagram.Fragments.ProfileFragment;
-import com.example.instagram.Fragments.SearchFragment;
+import com.example.instagram.fragments.HomeFragment;
+import com.example.instagram.fragments.NotificationFragment;
+import com.example.instagram.fragments.ProfileFragment;
+import com.example.instagram.fragments.SearchFragment;
 
 public class MainActivity extends AppCompatActivity {
 

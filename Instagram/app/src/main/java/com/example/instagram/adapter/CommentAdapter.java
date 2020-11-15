@@ -1,4 +1,4 @@
-package com.example.instagram.Adapter;
+package com.example.instagram.adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -25,8 +25,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.example.instagram.MainActivity;
-import com.example.instagram.Model.Comment;
-import com.example.instagram.Model.User;
+import com.example.instagram.model.Comment;
+import com.example.instagram.model.User;
 import com.example.instagram.R;
 
 import java.util.List;

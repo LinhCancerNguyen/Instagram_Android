@@ -1,4 +1,4 @@
-package com.example.instagram.Model;
+package com.example.instagram.model;
 
 public class Post {
     private String postid;

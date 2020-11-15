@@ -1,4 +1,4 @@
-package com.example.instagram.Adapter;
+package com.example.instagram.adapter;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -18,11 +18,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.example.instagram.Fragments.PostDetailFragment;
-import com.example.instagram.Fragments.ProfileFragment;
-import com.example.instagram.Model.Notification;
-import com.example.instagram.Model.Post;
-import com.example.instagram.Model.User;
+import com.example.instagram.fragments.PostDetailFragment;
+import com.example.instagram.fragments.ProfileFragment;
+import com.example.instagram.model.Notification;
+import com.example.instagram.model.Post;
+import com.example.instagram.model.User;
 import com.example.instagram.R;
 
 import java.util.List;

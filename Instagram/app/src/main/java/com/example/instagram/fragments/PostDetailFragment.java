@@ -1,4 +1,4 @@
-package com.example.instagram.Fragments;
+package com.example.instagram.fragments;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,8 +15,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.example.instagram.Adapter.PostAdapter;
-import com.example.instagram.Model.Post;
+import com.example.instagram.adapter.PostAdapter;
+import com.example.instagram.model.Post;
 import com.example.instagram.R;
 
 import java.util.ArrayList;

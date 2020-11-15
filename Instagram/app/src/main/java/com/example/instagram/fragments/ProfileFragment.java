@@ -1,4 +1,4 @@
-package com.example.instagram.Fragments;
+package com.example.instagram.fragments;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -24,11 +24,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.example.instagram.Adapter.MyFotosAdapter;
+import com.example.instagram.adapter.MyPhotosAdapter;
 //import com.example.instagram.EditProfileActivity;
 import com.example.instagram.FollowersActivity;
-import com.example.instagram.Model.Post;
-import com.example.instagram.Model.User;
+import com.example.instagram.model.Post;
+import com.example.instagram.model.User;
 import com.example.instagram.OptionsActivity;
 import com.example.instagram.R;
 
@@ -51,11 +51,11 @@ public class ProfileFragment extends Fragment {
     String profileid;
 
     private RecyclerView recyclerView;
-    private MyFotosAdapter myFotosAdapter;
+    private MyPhotosAdapter myPhotosAdapter;
     private List<Post> postList;
 
     private RecyclerView recyclerView_saves;
-    private MyFotosAdapter myFotosAdapter_saves;
+    private MyPhotosAdapter myPhotosAdapter_saves;
     private List<Post> postList_saves;
 
     ImageButton my_fotos, saved_fotos;
@@ -87,16 +87,16 @@ public class ProfileFragment extends Fragment {
         LinearLayoutManager mLayoutManager = new GridLayoutManager(getContext(), 3);
         recyclerView.setLayoutManager(mLayoutManager);
         postList = new ArrayList<>();
-        myFotosAdapter = new MyFotosAdapter(getContext(), postList);
-        recyclerView.setAdapter(myFotosAdapter);
+        myPhotosAdapter = new MyPhotosAdapter(getContext(), postList);
+        recyclerView.setAdapter(myPhotosAdapter);
 
         recyclerView_saves = view.findViewById(R.id.recycler_view_save);
         recyclerView_saves.setHasFixedSize(true);
         LinearLayoutManager mLayoutManagers = new GridLayoutManager(getContext(), 3);
         recyclerView_saves.setLayoutManager(mLayoutManagers);
         postList_saves = new ArrayList<>();
-        myFotosAdapter_saves = new MyFotosAdapter(getContext(), postList_saves);
-        recyclerView_saves.setAdapter(myFotosAdapter_saves);
+        myPhotosAdapter_saves = new MyPhotosAdapter(getContext(), postList_saves);
+        recyclerView_saves.setAdapter(myPhotosAdapter_saves);
 
         recyclerView.setVisibility(View.VISIBLE);
         recyclerView_saves.setVisibility(View.GONE);
@@ -307,7 +307,7 @@ public class ProfileFragment extends Fragment {
                     }
                 }
                 Collections.reverse(postList);
-                myFotosAdapter.notifyDataSetChanged();
+                myPhotosAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -351,7 +351,7 @@ public class ProfileFragment extends Fragment {
                         }
                     }
                 }
-                myFotosAdapter_saves.notifyDataSetChanged();
+                myPhotosAdapter_saves.notifyDataSetChanged();
             }
 
             @Override

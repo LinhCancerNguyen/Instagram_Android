@@ -1,4 +1,4 @@
-package com.example.instagram.Adapter;
+package com.example.instagram.adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -33,10 +33,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.example.instagram.CommentsActivity;
 import com.example.instagram.FollowersActivity;
-import com.example.instagram.Fragments.PostDetailFragment;
-import com.example.instagram.Fragments.ProfileFragment;
-import com.example.instagram.Model.Post;
-import com.example.instagram.Model.User;
+import com.example.instagram.fragments.PostDetailFragment;
+import com.example.instagram.fragments.ProfileFragment;
+import com.example.instagram.model.Post;
+import com.example.instagram.model.User;
 import com.example.instagram.R;
 
 import java.util.HashMap;
