@@ -110,7 +110,6 @@ public class StoryActivity extends AppCompatActivity implements StoriesProgressV
         });
         skip.setOnTouchListener(onTouchListener);
 
-        //
         r_seen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -138,8 +137,6 @@ public class StoryActivity extends AppCompatActivity implements StoriesProgressV
                 });
             }
         });
-
-        //
 
     }
 

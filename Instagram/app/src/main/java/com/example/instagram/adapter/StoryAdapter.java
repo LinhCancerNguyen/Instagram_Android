@@ -70,10 +70,9 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.ViewHolder>{
                 if (viewHolder.getAdapterPosition() == 0){
                     myStory(viewHolder.addstory_text, viewHolder.story_plus, true);
                 } else {
-                    // TODO: go to story
-//                    Intent intent = new Intent(mContext, StoryActivity.class);
-//                    intent.putExtra("userid", story.getUserid());
-//                    mContext.startActivity(intent);
+                    Intent intent = new Intent(mContext, StoryActivity.class);
+                    intent.putExtra("userid", story.getUserid());
+                    mContext.startActivity(intent);
                 }
             }
         });
@@ -148,7 +147,10 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.ViewHolder>{
                         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "View Story",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
-
+                                        Intent intent = new Intent(mContext, StoryActivity.class);
+                                        intent.putExtra("userid", FirebaseAuth.getInstance().getCurrentUser().getUid());
+                                        mContext.startActivity(intent);
+                                        dialog.dismiss();
                                     }
                                 });
                         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Add Story",
