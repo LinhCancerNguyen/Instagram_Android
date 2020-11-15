@@ -26,8 +26,8 @@ import java.util.List;
 
 public class PostAdapter extends  RecyclerView.Adapter<PostAdapter.ViewHolder>{
 
-    public Context mContext;
-    public List<Post> mPost;
+    private Context mContext;
+    private List<Post> mPost;
 
     private FirebaseUser firebaseUser;
 
@@ -59,8 +59,8 @@ public class PostAdapter extends  RecyclerView.Adapter<PostAdapter.ViewHolder>{
         }
 
         publisherInfo(holder.image_profile, holder.username, holder.publisher, post.getPublisher());
-//        isLiked(post.getPostid(), holder.like);
-//        nrLikes(holder.likes, post.getPostid());
+        isLiked(post.getPostid(), holder.like);
+        nrLikes(holder.likes, post.getPostid());
 
         holder.like.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,61 +103,60 @@ public class PostAdapter extends  RecyclerView.Adapter<PostAdapter.ViewHolder>{
     }
 
     private void isLiked(String postid, ImageView imageView){
-        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference()
-                .child("Likes")
-                .child(postid);
-
+                .child("Likes").child(postid);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.child(firebaseUser.getUid()).exists()){
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.child(firebaseUser.getUid()).exists()){
                     imageView.setImageResource(R.drawable.ic_liked);
                     imageView.setTag("liked");
-                } else {
+                } else{
                     imageView.setImageResource(R.drawable.ic_like);
                     imageView.setTag("like");
                 }
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onCancelled(DatabaseError databaseError) {
 
             }
         });
     }
 
-    private void nrLikes(TextView likes, String postid){
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Likes")
-                .child(postid);
+    private void nrLikes(final TextView likes, String postId){
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Likes").child(postId);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                likes.setText(snapshot.getChildrenCount()+" likes");
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                likes.setText(dataSnapshot.getChildrenCount()+" likes");
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onCancelled(DatabaseError databaseError) {
 
             }
         });
+
     }
 
     private void publisherInfo(final ImageView image_profile, final TextView username, final TextView publisher, final String userid){
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(userid);
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference()
+                .child("Users").child(userid);
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                User user = snapshot.getValue(User.class);
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                User user = dataSnapshot.getValue(User.class);
                 Glide.with(mContext).load(user.getImageurl()).into(image_profile);
                 username.setText(user.getUsername());
                 publisher.setText(user.getUsername());
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onCancelled(DatabaseError databaseError) {
 
             }
         });

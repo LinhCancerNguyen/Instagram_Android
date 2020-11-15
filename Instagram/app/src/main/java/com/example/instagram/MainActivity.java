@@ -14,6 +14,7 @@ import com.example.instagram.fragment.NotificationFragment;
 import com.example.instagram.fragment.ProfileFragment;
 import com.example.instagram.fragment.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         case R.id.nav_profile:
                             SharedPreferences.Editor editor = getSharedPreferences("PREFS", MODE_PRIVATE).edit();
-                            //editor.putString("profileid", );
+                            editor.putString("profileid", FirebaseAuth.getInstance().getCurrentUser().getUid());
                             editor.apply();
                             selectedFragment = new ProfileFragment();
                             break;

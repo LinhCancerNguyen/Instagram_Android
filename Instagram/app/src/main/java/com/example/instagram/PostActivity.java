@@ -26,6 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
+import com.google.firebase.storage.UploadTask;
 import com.theartofdev.edmodo.cropper.CropImage;
 
 import java.util.HashMap;
@@ -85,9 +86,9 @@ public class PostActivity extends AppCompatActivity {
         if(imageUri != null) {
             StorageReference fileReference = storageReference.child(System.currentTimeMillis() + "." + getFileExtension(imageUri));
             uploadTask = fileReference.putFile(imageUri);
-            uploadTask.continueWithTask(new Continuation() {
+            uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                 @Override
-                public Object then(@NonNull Task task) throws Exception {
+                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
                     if(!task.isSuccessful()) {
                         throw task.getException();
                     }
@@ -101,14 +102,15 @@ public class PostActivity extends AppCompatActivity {
                         myUrl = downloadUri.toString();
 
                         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Posts");
-                        String postId = reference.push().getKey();
+                        String postid = reference.push().getKey();
                         HashMap<String, Object> hashMap = new HashMap<>();
-                        hashMap.put("postId", postId);
-                        hashMap.put("postImage", myUrl);
+                        hashMap.put("postid", postid);
+                        hashMap.put("postimage", myUrl);
                         hashMap.put("description", description.getText().toString());
                         hashMap.put("publisher", FirebaseAuth.getInstance().getCurrentUser().getUid());
 
-                        reference.child(postId).setValue(hashMap);
+                        reference.child(postid).setValue(hashMap);
+
                         progressDialog.dismiss();
                         startActivity(new Intent(PostActivity.this, MainActivity.class));
                         finish();
