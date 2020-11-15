@@ -1,29 +1,31 @@
 package com.example.instagram;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class StartActivity extends AppCompatActivity {
 
-    private Button btnLogin_1, btnRegister_1;
+    Button login, register;
 
-    private FirebaseUser user;
+    FirebaseUser firebaseUser;
 
     @Override
     protected void onStart() {
         super.onStart();
 
-        user = FirebaseAuth.getInstance().getCurrentUser();
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        if(user != null) {
-            startActivity(new Intent(StartActivity.this, MainActivity.class));
+        //check if user is null
+        if (firebaseUser != null){
+            Intent intent = new Intent(StartActivity.this, MainActivity.class);
+            startActivity(intent);
             finish();
         }
     }
@@ -32,21 +34,23 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
-        btnLogin_1 = findViewById(R.id.btnLogin_1);
-        btnRegister_1 = findViewById(R.id.btnRegister_1);
 
-        btnLogin_1.setOnClickListener(new View.OnClickListener() {
+        login = findViewById(R.id.login);
+        register = findViewById(R.id.register);
+
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 startActivity(new Intent(StartActivity.this, LoginActivity.class));
             }
         });
 
-        btnRegister_1.setOnClickListener(new View.OnClickListener() {
+        register.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 startActivity(new Intent(StartActivity.this, RegisterActivity.class));
             }
         });
+
     }
 }

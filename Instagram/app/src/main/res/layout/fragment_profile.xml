@@ -3,19 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.ProfileFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.ProfileFragment">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
-        android:id="@+id/bar">
+        android:background="?android:attr/windowBackground">
 
         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?android:attr/windowBackground"
-            android:id="@+id/toolbar">
+            android:background="?android:attr/windowBackground">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -26,28 +27,27 @@
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
                     android:maxLines="1"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold"
-                    android:id="@+id/username"
-                    android:textColor="@color/colorPrimaryDark"/>
+                    android:id="@+id/username"/>
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/options"
-                    android:src="@drawable/ic_option"
+                    android:src="@drawable/ic_settings"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="10dp"/>
 
             </RelativeLayout>
 
         </androidx.appcompat.widget.Toolbar>
-
     </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/bar">
+        android:layout_below="@id/bar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,9 +57,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:id="@+id/top_bar"
-                android:padding="16dp">
+                android:padding="16dp"
+                android:orientation="horizontal">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="80dp"
@@ -68,15 +68,15 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
+                    android:orientation="vertical"
                     android:paddingLeft="20dp"
                     android:paddingRight="4dp"
-                    android:orientation="vertical">
+                    android:layout_height="80dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <LinearLayout
@@ -131,10 +131,10 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/following"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:layout_gravity="center"
                                 android:textSize="18sp"
+                                android:id="@+id/following"
                                 android:textStyle="bold"/>
 
                             <TextView
@@ -152,6 +152,7 @@
                         android:layout_marginTop="8dp"
                         android:id="@+id/edit_profile"
                         android:background="@drawable/button_black"/>
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -161,13 +162,14 @@
                 android:layout_height="wrap_content"
                 android:padding="12dp"
                 android:id="@+id/mid_bar"
+                android:layout_below="@id/top_bar"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:maxLines="1"
-                    android:id="@+id/fullName"
+                    android:id="@+id/fullname"
                     android:textStyle="bold"
                     android:textSize="16sp"
                     android:textColor="@color/colorPrimaryDark"/>
@@ -185,6 +187,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/mid_bar"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="-5dp"
                 android:layout_marginRight="-5dp"
@@ -194,18 +197,18 @@
 
                 <ImageButton
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:id="@+id/my_photos"
+                    android:id="@+id/my_fotos"
                     android:src="@drawable/ic_grid"
-                    style="?android:attr/buttonBarButtonStyle"/>
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_height="wrap_content" />
 
                 <ImageButton
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:id="@+id/saved_photos"
+                    android:id="@+id/saved_fotos"
                     android:src="@drawable/ic_save"
+                    android:layout_height="wrap_content"
                     style="?android:attr/buttonBarButtonStyle"/>
 
             </LinearLayout>
@@ -213,11 +216,13 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/last_bar"
                 android:id="@+id/recycler_view"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/last_bar"
                 android:visibility="gone"
                 android:id="@+id/recycler_view_save"/>
 

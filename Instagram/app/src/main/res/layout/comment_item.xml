@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:layout_margin="8dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="40dp"
@@ -15,11 +15,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:orientation="vertical"
-        android:layout_toEndOf="@+id/image_profile">
+        android:layout_toEndOf="@id/image_profile">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text=""
             android:textStyle="bold"
             android:textColor="@color/colorPrimaryDark"
             android:id="@+id/username"/>
@@ -28,6 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/comment"
+            android:text=""
             android:maxLines="5"/>
 
     </LinearLayout>

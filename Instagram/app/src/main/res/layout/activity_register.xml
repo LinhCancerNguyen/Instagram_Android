@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="12dp"
+    android:padding="10dp"
     android:gravity="center"
     tools:context=".RegisterActivity">
 
@@ -19,17 +19,17 @@
         android:layout_height="wrap_content"
         android:background="@drawable/edittext_background"
         android:hint="Username"
+        android:id="@+id/username"
         android:layout_marginTop="15dp"
-        android:id="@+id/etUsername_1"
         android:padding="10dp"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/edittext_background"
-        android:hint="Full Name"
+        android:hint="Full name"
+        android:id="@+id/fullname"
         android:layout_marginTop="15dp"
-        android:id="@+id/etFullName_1"
         android:padding="10dp"/>
 
     <EditText
@@ -37,9 +37,9 @@
         android:layout_height="wrap_content"
         android:background="@drawable/edittext_background"
         android:hint="Email"
-        android:layout_marginTop="15dp"
+        android:id="@+id/email"
         android:inputType="textEmailAddress"
-        android:id="@+id/etEmail_1"
+        android:layout_marginTop="15dp"
         android:padding="10dp"/>
 
     <EditText
@@ -47,25 +47,25 @@
         android:layout_height="wrap_content"
         android:background="@drawable/edittext_background"
         android:hint="Password"
-        android:layout_marginTop="15dp"
+        android:id="@+id/password"
         android:inputType="textPassword"
-        android:id="@+id/etPassword_1"
+        android:layout_marginTop="15dp"
         android:padding="10dp"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnRegister_2"
+        android:layout_marginTop="15dp"
         android:text="Register"
+        android:id="@+id/register"
         android:textColor="@color/colorPrimary"
-        android:background="@drawable/button_background"
-        android:layout_marginTop="15dp"/>
+        android:background="@drawable/button_background"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Already have an account? Log In"
-        android:id="@+id/txtLogin"
+        android:text="Already have an sccount? Log in"
+        android:id="@+id/txt_login"
         android:layout_marginTop="10dp"/>
 
 </LinearLayout>

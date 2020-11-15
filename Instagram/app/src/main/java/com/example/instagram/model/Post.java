@@ -1,4 +1,4 @@
-package com.example.instagram.model;
+package com.example.instagram.Model;
 
 public class Post {
     private String postid;
@@ -6,14 +6,14 @@ public class Post {
     private String description;
     private String publisher;
 
-    public Post() {
-    }
-
     public Post(String postid, String postimage, String description, String publisher) {
         this.postid = postid;
         this.postimage = postimage;
         this.description = description;
         this.publisher = publisher;
+    }
+
+    public Post() {
     }
 
     public String getPostid() {
