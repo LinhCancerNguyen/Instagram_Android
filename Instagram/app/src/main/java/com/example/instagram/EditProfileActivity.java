@@ -32,8 +32,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 import com.example.instagram.model.User;
+import com.rengwuxian.materialedittext.MaterialEditText;
 import com.theartofdev.edmodo.cropper.CropImage;
-import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.util.HashMap;
 
@@ -41,7 +41,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
     private ImageView close, image_profile;
     private TextView save, tv_change;
-    private EditText fullname, username, bio;
+    private MaterialEditText fullname, username, bio;
 
     private FirebaseUser firebaseUser;
 

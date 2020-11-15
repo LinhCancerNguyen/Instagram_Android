@@ -59,7 +59,7 @@ public class ProfileFragment extends Fragment {
     private com.example.instagram.adapter.MyPhotosAdapter myPhotosAdapter_saves;
     private List<Post> postList_saves;
 
-    ImageButton my_fotos, saved_fotos;
+    ImageButton my_photos, saved_photos;
 
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
@@ -79,8 +79,8 @@ public class ProfileFragment extends Fragment {
         bio = view.findViewById(R.id.bio);
         edit_profile = view.findViewById(R.id.edit_profile);
         username = view.findViewById(R.id.username);
-        my_fotos = view.findViewById(R.id.my_photos);
-        saved_fotos = view.findViewById(R.id.saved_photos);
+        my_photos = view.findViewById(R.id.my_photos);
+        saved_photos = view.findViewById(R.id.saved_photos);
         options = view.findViewById(R.id.options);
 
         recyclerView = view.findViewById(R.id.recycler_view);
@@ -112,7 +112,7 @@ public class ProfileFragment extends Fragment {
             edit_profile.setText("Edit Profile");
         } else {
             checkFollow();
-            saved_fotos.setVisibility(View.GONE);
+            saved_photos.setVisibility(View.GONE);
         }
 
         edit_profile.setOnClickListener(new View.OnClickListener() {
@@ -149,7 +149,7 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        my_fotos.setOnClickListener(new View.OnClickListener() {
+        my_photos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 recyclerView.setVisibility(View.VISIBLE);
@@ -157,7 +157,7 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        saved_fotos.setOnClickListener(new View.OnClickListener() {
+        saved_photos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 recyclerView.setVisibility(View.GONE);

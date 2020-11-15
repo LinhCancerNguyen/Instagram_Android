@@ -84,24 +84,27 @@
             android:textColor="@color/colorPrimary"
             android:textSize="16sp"/>
 
-        <EditText
+        <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:hint="Full Name"
-            android:id="@+id/fullname"/>
+            android:id="@+id/fullname"
+            app:met_floatingLabel="normal"/>
 
-        <EditText
+        <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Username"
-            android:id="@+id/username"/>
+            android:id="@+id/username"
+            app:met_floatingLabel="normal"/>
 
-        <EditText
+        <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Bio"
-            android:id="@+id/bio"/>
+            android:id="@+id/bio"
+            app:met_floatingLabel="normal"/>
 
     </LinearLayout>
 
