@@ -1,4 +1,4 @@
-package com.example.instagram.Fragments;
+package com.example.instagram.fragments;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -21,8 +21,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.example.instagram.Adapter.UserAdapter;
-import com.example.instagram.Model.User;
+import com.example.instagram.adapter.UserAdapter;
+import com.example.instagram.model.User;
 import com.example.instagram.R;
 
 import java.util.ArrayList;

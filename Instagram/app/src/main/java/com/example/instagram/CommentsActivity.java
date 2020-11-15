@@ -21,9 +21,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.example.instagram.Adapter.CommentAdapter;
-import com.example.instagram.Model.Comment;
-import com.example.instagram.Model.User;
+import com.example.instagram.adapter.CommentAdapter;
+import com.example.instagram.model.Comment;
+import com.example.instagram.model.User;
 
 import java.util.ArrayList;
 import java.util.HashMap;

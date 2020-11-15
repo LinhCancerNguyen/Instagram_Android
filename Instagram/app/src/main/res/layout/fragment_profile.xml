@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragments.ProfileFragment">
+    tools:context=".fragments.ProfileFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/bar"
@@ -198,7 +198,7 @@
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:id="@+id/my_fotos"
+                    android:id="@+id/my_photos"
                     android:src="@drawable/ic_grid"
                     style="?android:attr/buttonBarButtonStyle"
                     android:layout_height="wrap_content" />
@@ -206,7 +206,7 @@
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:id="@+id/saved_fotos"
+                    android:id="@+id/saved_photos"
                     android:src="@drawable/ic_save"
                     android:layout_height="wrap_content"
                     style="?android:attr/buttonBarButtonStyle"/>

@@ -1,4 +1,4 @@
-package com.example.instagram.Model;
+package com.example.instagram.model;
 
 public class User {
     private String id;

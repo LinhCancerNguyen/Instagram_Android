@@ -1,4 +1,4 @@
-package com.example.instagram.Adapter;
+package com.example.instagram.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -21,9 +21,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.example.instagram.Fragments.ProfileFragment;
+import com.example.instagram.fragments.ProfileFragment;
 import com.example.instagram.MainActivity;
-import com.example.instagram.Model.User;
+import com.example.instagram.model.User;
 import com.example.instagram.R;
 
 import java.util.HashMap;
@@ -37,10 +37,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ImageViewHolde
 
     private Context mContext;
     private List<User> mUsers;
-<<<<<<< HEAD
-=======
+
     private boolean isFragment;
->>>>>>> newCuong
 
     private FirebaseUser firebaseUser;
 
@@ -77,13 +75,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ImageViewHolde
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
-<<<<<<< HEAD
-            public void onClick(View v) {
-                SharedPreferences.Editor editor = mContext.getSharedPreferences("PREFS", Context.MODE_PRIVATE).edit();
-                editor.putString("profileid", user.getId());
-                editor.apply();
-                ((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProfileFragment()).commit();
-=======
             public void onClick(View view) {
                 if (isFragment) {
                     SharedPreferences.Editor editor = mContext.getSharedPreferences("PREFS", MODE_PRIVATE).edit();
@@ -97,7 +88,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ImageViewHolde
                     intent.putExtra("publisherid", user.getId());
                     mContext.startActivity(intent);
                 }
->>>>>>> newCuong
             }
         });
 

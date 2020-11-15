@@ -1,4 +1,4 @@
-package com.example.instagram.Adapter;
+package com.example.instagram.adapter;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -12,33 +12,33 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.instagram.Fragments.PostDetailFragment;
-import com.example.instagram.Model.Post;
+import com.example.instagram.fragments.PostDetailFragment;
+import com.example.instagram.model.Post;
 import com.example.instagram.R;
 
 import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
 
-public class MyFotosAdapter extends RecyclerView.Adapter<MyFotosAdapter.ImageViewHolder> {
+public class MyPhotosAdapter extends RecyclerView.Adapter<MyPhotosAdapter.ImageViewHolder> {
 
     private Context mContext;
     private List<Post> mPosts;
 
-    public MyFotosAdapter(Context context, List<Post> posts){
+    public MyPhotosAdapter(Context context, List<Post> posts){
         mContext = context;
         mPosts = posts;
     }
 
     @NonNull
     @Override
-    public MyFotosAdapter.ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyPhotosAdapter.ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.fotos_item, parent, false);
-        return new MyFotosAdapter.ImageViewHolder(view);
+        return new MyPhotosAdapter.ImageViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final MyFotosAdapter.ImageViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final MyPhotosAdapter.ImageViewHolder holder, final int position) {
 
         final Post post = mPosts.get(position);
 

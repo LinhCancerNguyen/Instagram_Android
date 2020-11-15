@@ -1,4 +1,4 @@
-package com.example.instagram.Fragments;
+package com.example.instagram.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,8 +16,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.example.instagram.Adapter.NotificationAdapter;
-import com.example.instagram.Model.Notification;
+import com.example.instagram.adapter.NotificationAdapter;
+import com.example.instagram.model.Notification;
 import com.example.instagram.R;
 
 import java.util.ArrayList;

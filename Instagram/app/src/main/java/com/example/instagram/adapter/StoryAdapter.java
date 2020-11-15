@@ -1,4 +1,4 @@
-//package com.example.instagram.Adapter;
+//package com.example.instagram.adapter;
 //
 //import android.app.AlertDialog;
 //import android.content.Context;

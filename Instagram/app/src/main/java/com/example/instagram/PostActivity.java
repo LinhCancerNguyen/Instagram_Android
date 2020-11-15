@@ -33,13 +33,13 @@ import java.util.HashMap;
 public class PostActivity extends AppCompatActivity {
 
     private Uri mImageUri;
-    String miUrlOk = "";
+    private String miUrlOk = "";
     private StorageTask uploadTask;
-    StorageReference storageRef;
+    private StorageReference storageRef;
 
-    ImageView close, image_added;
-    TextView post;
-    EditText description;
+    private ImageView close, image_added;
+    private TextView post;
+    private EditText description;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,21 +88,12 @@ public class PostActivity extends AppCompatActivity {
             final StorageReference fileReference = storageRef.child(System.currentTimeMillis()
                     + "." + getFileExtension(mImageUri));
 
-<<<<<<< HEAD
-        if(imageUri != null) {
-            StorageReference fileReference = storageReference.child(System.currentTimeMillis() + "." + getFileExtension(imageUri));
-            uploadTask = fileReference.putFile(imageUri);
-            uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-                @Override
-                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                    if(!task.isSuccessful()) {
-=======
             uploadTask = fileReference.putFile(mImageUri);
+
             uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                 @Override
                 public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
                     if (!task.isSuccessful()) {
->>>>>>> newCuong
                         throw task.getException();
                     }
                     return fileReference.getDownloadUrl();
@@ -115,30 +106,19 @@ public class PostActivity extends AppCompatActivity {
                         miUrlOk = downloadUri.toString();
 
                         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Posts");
-<<<<<<< HEAD
-                        String postid = reference.push().getKey();
-                        HashMap<String, Object> hashMap = new HashMap<>();
-                        hashMap.put("postid", postid);
-                        hashMap.put("postimage", myUrl);
-=======
 
                         String postid = reference.push().getKey();
 
                         HashMap<String, Object> hashMap = new HashMap<>();
                         hashMap.put("postid", postid);
                         hashMap.put("postimage", miUrlOk);
->>>>>>> newCuong
                         hashMap.put("description", description.getText().toString());
                         hashMap.put("publisher", FirebaseAuth.getInstance().getCurrentUser().getUid());
 
                         reference.child(postid).setValue(hashMap);
 
-<<<<<<< HEAD
-                        progressDialog.dismiss();
-=======
                         pd.dismiss();
 
->>>>>>> newCuong
                         startActivity(new Intent(PostActivity.this, MainActivity.class));
                         finish();
 
