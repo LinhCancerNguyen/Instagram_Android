@@ -81,10 +81,10 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ImageViewHolde
         }
 
         publisherInfo(holder.image_profile, holder.username, holder.publisher, post.getPublisher());
-        //isLiked(post.getPostid(), holder.like);
-        //isSaved(post.getPostid(), holder.save);
-        //nrLikes(holder.likes, post.getPostid());
-        //getCommetns(post.getPostid(), holder.comments);
+        isLiked(post.getPostid(), holder.like);
+        isSaved(post.getPostid(), holder.save);
+        nrLikes(holder.likes, post.getPostid());
+        getCommetns(post.getPostid(), holder.comments);
 
         holder.like.setOnClickListener(new View.OnClickListener() {
             @Override

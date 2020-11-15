@@ -26,8 +26,6 @@
 //import java.util.ArrayList;
 //import java.util.List;
 //
-//import jp.shts.android.storiesprogressview.StoriesProgressView;
-//
 //public class StoryActivity extends AppCompatActivity implements StoriesProgressView.StoriesListener {
 //
 //    int counter = 0;
