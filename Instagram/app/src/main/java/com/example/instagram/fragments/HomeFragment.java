@@ -10,21 +10,22 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.instagram.R;
+import com.example.instagram.adapter.PostAdapter;
 import com.example.instagram.adapter.StoryAdapter;
+import com.example.instagram.model.Post;
+import com.example.instagram.model.Story;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.example.instagram.adapter.PostAdapter;
-//import com.example.instagram.Adapter.StoryAdapter;
-import com.example.instagram.model.Post;
-import com.example.instagram.model.Story;
-import com.example.instagram.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
+//import com.example.instagram.Adapter.StoryAdapter;
 
 public class HomeFragment extends Fragment {
 
